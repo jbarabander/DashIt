@@ -3,8 +3,9 @@ var extend = require('mongoose-schema-extend');
 var Promise = require('bluebird');
 require('./');
 var Step = require('./step.js');
+var limitText = require('../utilties/modelUtilities.js').limitText;
 
-var dashSchema = mongoose.Schema (
+var dashSchema = mongoose.Schema(
   {
     title: {type: String, required: true},
     description: {type: String, required: true},
@@ -13,6 +14,11 @@ var dashSchema = mongoose.Schema (
   },
   {collection: 'dashes', discriminatorKey: '_type'}
 );
+
+dashSchema.path('title').validate(function(value) {
+
+});
+
 
 var discreteDashSchema = dashSchema.extend(
   {

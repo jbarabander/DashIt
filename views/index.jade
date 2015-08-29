@@ -1,5 +1,32 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(ng-app='DashIt')
+    header.jumbotron.text-center
+      h1.text-center #{title}!
+      p A simple (and fun!) way to keep track of all the awesome things you accomplish!
+      div.container.text-center(ng-controller='loginController' id='testCol')
+        h3 Login here
+        div.row
+          div.col-md-8.col-md-offset-2
+            form(name='loginForm')
+                input.form-control(type='text' name='username'  ng-model='login.username')
+                input.form-control(type='text' name='password'  ng-model='login.password')
+            div
+              p Don't have an account?
+                a  Create one here!
+        pre {{ login | json }} 
+    div.container
+      div.row
+        div.col-md-4.col-sm-6.col-xs-12
+          h3
+            a About
+          p find out more about this project!
+        div.col-md-4.col-sm-6.col-xs-12
+          h3
+            a Connect
+          p Connect with others who are currently using DashIt!
+        div.col-md-4.col-sm-12
+          h3
+            a Share
+          p Like this project?  Why not let some of yo franz know! (Please?  We'll love you forever)

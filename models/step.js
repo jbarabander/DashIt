@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Promise = require('bluebird');
 require('./');
+var limitText = require('../utilities/modelUtilities.js').limitText;
 
 var stepSchema = mongoose.Schema(
   {
@@ -10,5 +11,13 @@ var stepSchema = mongoose.Schema(
     date: {type: Date, required: true}
   }
 );
+
+stepSchema.path('title').validate(function(value) {
+  return limitText(value, 50);
+});
+
+stepSchema.path('description').validate(function(value) {
+  return limitText(value, 300);
+});
 
 module.exports = mongoose.Model('Step', stepSchema);

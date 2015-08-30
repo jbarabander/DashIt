@@ -12,10 +12,17 @@ block content
             form(name='loginForm')
                 input.form-control(type='text' name='username'  ng-model='login.username')
                 input.form-control(type='text' name='password'  ng-model='login.password')
+            br
             div
-              p Don't have an account?
-                a  Create one here!
-        pre {{ login | json }} 
+              p Don't have an account? 
+                a(ng-click='toggleTF()') Create one here!
+              div.container(ng-show='!createAccount')
+                form(name='createAccount')
+                  input.form-control(type='text' name='username' ng-model='newUser.name')
+                  input.form-control(type='text' name='password' ng-model='newUser.password')
+                
+                   
+        //- pre {{ login | json }} 
     div.container
       div.row
         div.col-md-4.col-sm-6.col-xs-12

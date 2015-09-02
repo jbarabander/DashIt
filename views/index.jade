@@ -3,23 +3,34 @@ extends layout
 block content
   div(ng-app='DashIt')
     header.jumbotron.text-center
-      h1.text-center #{title}!
-      p A simple (and fun!) way to keep track of all the awesome things you accomplish!
-      div.container.text-center(ng-controller='loginController' id='testCol')
-        h3 Login here
-        div.row
+      div.container(ng-controller='LoginController' id='testCol')
+        h1.text-center #{title}!
+        p A simple (and fun!) way to keep track of all the awesome things you accomplish!
+        div.col-md-offset-2.text-left
+          h3 Login here
+        div.row.text-center
           div.col-md-8.col-md-offset-2
-            form(name='loginForm')
-                input.form-control(type='text' name='username'  ng-model='login.username')
-                input.form-control(type='text' name='password'  ng-model='login.password')
+            form(name='loginForm' ng-submit='' method='get')
+                input.form-control(type='text' name='username' placeholder='username' ng-model='login.username')
+                input.form-control(type='password' name='password'  placeholder='password' ng-model='login.password')
+                br
+                div.text-left
+                  button.btn.btn-default(type='submit') Submit
             br
             div
               p Don't have an account? 
-                a(ng-click='toggleTF()') Create one here!
+                a(ng-click='createAccount = !createAccount') Create one here!
               div.container(ng-show='!createAccount')
                 form(name='createAccount')
-                  input.form-control(type='text' name='username' ng-model='newUser.name')
-                  input.form-control(type='text' name='password' ng-model='newUser.password')
+                  div.row.text-center
+                    div.col-lg-6.col-xs-12
+                      input.form-control(type='text' name='firstName' ng-model='newUser.firstName')
+                    div.col-lg-6.col-xs-12
+                      input.form-control(type='text' name='lastName' ng-model='newUser.lastName')
+                    div.col-lg-12
+                      input.form-control(type='text' name='email' ng-model='newUser.email')
+                      input.form-control(type='text' name='username' ng-model='newUser.name')
+                      input.form-control(type='text' name='password' ng-model='newUser.password')
                 
                    
         //- pre {{ login | json }} 
@@ -36,4 +47,4 @@ block content
         div.col-md-4.col-sm-12
           h3
             a Share
-          p Like this project?  Why not let some of yo franz know! (Please?  We'll love you forever)
+          p Like this project?  Why not let some of yo franz know! (Please????  We'll like love you forever)

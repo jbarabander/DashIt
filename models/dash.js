@@ -35,6 +35,6 @@ var continuousDashSchema = dashSchema.extend(
 );
 
 module.exports = {
-  Discrete: mongoose.model('Discrete', discreteDashSchema),
-  Continuous: mongoose.model('Continuous', continuousDashSchema)
+  Discrete: mongoose.model('DiscreteDash', discreteDashSchema),
+  Continuous: mongoose.model('ContinuousDash', continuousDashSchema)
 };

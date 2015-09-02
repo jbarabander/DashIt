@@ -13,8 +13,8 @@ var userSchema = mongoose.Schema(
     passwordHash: {type: String, required: true},
     pictureUrl: String,
     email: {type: String, required: true, unique: true},
-    discreteDashes: {type: mongoose.Schema.Types.ObjectId, ref: 'Discrete'},
-    continuousDashes: {type: mongoose.Schema.Types.ObjectId, ref: 'Continuous'}
+    discreteDashes: {type: mongoose.Schema.Types.ObjectId, ref: 'DiscreteDash'},
+    continuousDashes: {type: mongoose.Schema.Types.ObjectId, ref: 'ContinuousDash'}
   }
 );
 

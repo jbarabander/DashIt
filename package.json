@@ -6,6 +6,7 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "angular": "^1.4.5",
     "bcrypt": "^0.8.5",
     "bluebird": "^2.9.34",
     "body-parser": "~1.13.2",

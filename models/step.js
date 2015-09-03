@@ -20,4 +20,4 @@ stepSchema.path('description').validate(function(value) {
   return limitText(value, 300);
 });
 
-module.exports = mongoose.Model('Step', stepSchema);
+module.exports = mongoose.model('Step', stepSchema);

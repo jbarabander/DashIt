@@ -3,7 +3,9 @@ var extend = require('mongoose-schema-extend');
 var Promise = require('bluebird');
 require('./');
 var Step = require('./step.js');
-var limitText = require('../utilties/modelUtilities.js').limitText;
+var limitText = require('../utilities/modelUtilities.js').limitText;
+
+console.log(Step.schema);
 
 var dashSchema = mongoose.Schema(
   {

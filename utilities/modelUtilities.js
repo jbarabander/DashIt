@@ -4,11 +4,11 @@ function limitText(str, num) {
   return true;
 }
 
-// function shortenText(str, num) {
-//   if(typeof str !== 'string') throw new TypeError();
-//   if(str.length > num) return str.slice(0, num - 3) + '...';
-//   return str;
-// }
+function shortenText(str, num) {
+  if(typeof str !== 'string') throw new TypeError();
+  if(str.length > num) return str.slice(0, num - 3) + '...';
+  return str;
+}
 
 
 module.exports = {

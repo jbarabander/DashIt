@@ -5,6 +5,7 @@ require('./');
 var discreteDash = require('./dash.js').Discrete;
 var continuousDash = require('./dash.js').Continuous;
 
+
 var userSchema = mongoose.Schema(
   {
     firstName: {type: String, required: true},
@@ -13,8 +14,8 @@ var userSchema = mongoose.Schema(
     passwordHash: {type: String, required: true},
     pictureUrl: String,
     email: {type: String, required: true, unique: true},
-    discreteDashes: {type: mongoose.Schema.Types.ObjectId, ref: 'DiscreteDash'},
-    continuousDashes: {type: mongoose.Schema.Types.ObjectId, ref: 'ContinuousDash'}
+    discreteDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'DiscreteDash'}],
+    continuousDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'ContinuousDash'}]
   }
 );
 

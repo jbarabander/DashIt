@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Step 1",
+    "description": "The first step",
+    "completed": false,
+    "date": "Thu Dec 29 2015 08:46:56 GMT-0400 (EST)"
+  },
+  {
+    "title": "Step eleventyseven",
+    "description": "The best step",
+    "completed": false,
+    "date": "Tue Dec 27 2015 06:52:00 GMT-0600 (EST)"
+  },
+  {
+    "title": "Step eleventyseven",
+    "description": "The best step",
+    "completed": false,
+    "date": "Tue Dec 27 2015 06:52:00 GMT-0600 (EST)"
+  },
+  {
+    "title": "Step hexidecimal duck",
+    "description": "pretty sweet",
+    "completed": false,
+    "date": "Fri Jul 24 2015 06:52:00 GMT-0900 (EST)"
+  },
+  {
+    "title": "who are the beatles?",
+    "description": "need to find out who the beatles are cuz i suck",
+    "completed": true,
+    "date": "Wed Sep 2 2015 06:52:00 GMT-0900 (EST)"
+  }
+]

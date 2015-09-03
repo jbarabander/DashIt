@@ -1,0 +1,29 @@
+[
+  {
+    "firstName": "James",
+    "lastName": "Mathis",
+    "username": "jmathis",
+    "passwordHash": "boathub2$",
+    "email": "jmathis@yahoo.com",
+    "discreteDashes": [],
+    "continuousDashes": []
+  },
+  {
+    "firstName": "Dan",
+    "lastName": "Major",
+    "username": "dmajorasmask",
+    "passwordHash": "battlestations2",
+    "email":"zeldalover123@gmail.com",
+    "discreteDashes": [],
+    "continuousDashes": []
+  },
+  {
+    "firstName": "Alex",
+    "lastName": "Cameron",
+    "username": "electricppl24",
+    "passwordHash": "easylover2#$",
+    "email": "cam@hotmail.com",
+    "discreteDashes": [],
+    "continuousDashes": []
+  }
+]

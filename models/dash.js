@@ -30,7 +30,7 @@ var continuousDashSchema = dashSchema.extend(
   {
     source: {type: String},
     current: {type: Number, required: true},
-    target: {type: Number, required: true}
+    target: {type: Number, required: true},
   }
 );
 

@@ -1,0 +1,5 @@
+{
+	"undefined": "localhost/dashit",
+	"dev": "localhost/dashit",
+	"prod": "localhost/PROD_DB_NAME"
+}

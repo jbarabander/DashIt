@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Goal1",
+    "description": "Some Goal",
+    "startDate": "Thu Aug 05 2015 01:34:08 GMT-0400 (EDT)",
+    "endDate": "Thu Dec 03 2015 11:46:56 GMT-0500 (EST)",
+    "target": 50,
+    "current": 20
+  },
+  {
+    "title": "Goal2",
+    "description": "Some Other Goal",
+    "startDate": "Mon Aug 02 2015 08:42:06 GMT-0400 (EDT)",
+    "endDate": "Wed Dec 09 2015 13:50:60 GMT-0500 (EST)",
+    "target": 60,
+    "current": 13
+  },
+  {
+    "title": "Goal3",
+    "description": "Big Goal",
+    "startDate": "Mon Aug 02 2015 08:42:06 GMT-0400 (EDT)",
+    "endDate": "Wed Dec 09 2015 13:50:00 GMT-0500 (EST)",
+    "target": 120,
+    "current": 68
+  },
+  {
+    "title": "Some Sweet Goal",
+    "description": "Cool goal descriptipn",
+    "startDate": "Sun Jan 04 2015 01:34:08 GMT-0400 (EDT)",
+    "endDate": "Sat Nov 14 2015 12:31:12 GMT-0500 (EST)",
+    "target": 50,
+    "current": 20
+  }
+]

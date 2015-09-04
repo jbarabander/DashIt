@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/js-data/dist/js-data.js"></script>
+    <script src="/bower_components/js-data-angular/dist/js-data-angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/factories/auth.factory.js"></script>
+    <script src="/js/controllers/login.controller.js"></script>
+    <script src="/js/directives/login/login.js"></script>
+  </head>
+  <body>
+    <div ng-app="DashIt">
+      <header class="jumbotron text-center">
+        <div ng-controller="LoginController" id="testCol" class="container">
+          <h1 class="text-center">DashIt</h1>
+          <p>A simple (and fun!) way to keep track of all the awesome things you accomplish!</p>
+          <div class="col-md-offset-2 text-left">
+            <h3>Login here</h3>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2">
+              <div ng-controller='LoginController'>
+                <login creds='loginCreds' login="login(loginCreds)"></login>
+              </div>
+              <br/>
+              <div>
+                <p>Don't have an account? <a ng-click="createAccount = !createAccount">Create one here!</a></p>
+                <div ng-show="!createAccount" class="container">
+                  <form name="createAccount">
+                    <div class="row text-center">
+                      <div class="col-lg-6 col-xs-12">
+                        <input type="text" name="firstName" ng-model="newUser.firstName" class="form-control"/>
+                      </div>
+                      <div class="col-lg-6 col-xs-12">
+                        <input type="text" name="lastName" ng-model="newUser.lastName" class="form-control"/>
+                      </div>
+                      <div class="col-lg-12">
+                        <input type="text" name="email" ng-model="newUser.email" class="form-control"/>
+                        <input type="text" name="username" ng-model="newUser.name" class="form-control"/>
+                        <input type="text" name="password" ng-model="newUser.password" class="form-control"/>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3><a>About</a></h3>
+            <p>find out more about this project!</p>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <h3><a>Connect</a></h3>
+            <p>Connect with others who are currently using DashIt!</p>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <h3><a>Share</a></h3>
+            <p>Like this project?  Why not let some of yo franz know! (Please????  We'll like love you forever)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

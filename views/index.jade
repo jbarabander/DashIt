@@ -10,12 +10,7 @@ block content
           h3 Login here
         div.row.text-center
           div.col-md-8.col-md-offset-2
-            form(name='loginForm' ng-submit='' method='get')
-                input.form-control(type='text' name='username' placeholder='username' ng-model='login.username')
-                input.form-control(type='password' name='password'  placeholder='password' ng-model='login.password')
-                br
-                div.text-left
-                  button.btn.btn-default(type='submit') Submit
+            login(login='login')
             br
             div
               p Don't have an account? 

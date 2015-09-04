@@ -1,9 +1,9 @@
-app.controller('LoginController', function($scope, LoginFactory) {
-  $scope.login = {username: null, password: null};
+app.controller('LoginController', function($scope, Auth, $state) {
+  $scope.loginCreds = {username: null, password: null};
   $scope.createAccount = false;
-  $scope.getLogin = function() {
-    LoginFactory.loginChecker(loginObj).then(function(element) {
+  $scope.login = function(loginObj) {
+    Auth.login(loginObj).then(function(element) {
+      $state.go('user', {id: element._id});
     });
   };
-  $scope.createLogin = function () {}
 });

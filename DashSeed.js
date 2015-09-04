@@ -2,6 +2,7 @@ var User = require('./models/user.js');
 var DiscreteDash = require('./models/dash.js').Discrete;
 var ContinuousDash = require('./models/dash.js').Continuous;
 var Step = require('./models/step.js');
+var mongoose = require('mongoose');
 
 console.log(Step.schema);
 var discreteData = [
@@ -177,4 +178,5 @@ continuousData.forEach(function(element) {
 Promise.all(dataArr).then(function(results) {
   console.log(results);
   console.log("Finished Seeding");
+  mongoose.connection.close();
 }).then(null, console.error);

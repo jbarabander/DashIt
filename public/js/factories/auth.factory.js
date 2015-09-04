@@ -17,7 +17,8 @@ app.factory('Auth', function($http) {
 
   return {
     login: login,
-    createUser: createUser
+    createUser: createUser,
+    logout: logout
   };
 });
 //FIXME

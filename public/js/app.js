@@ -20,7 +20,7 @@ var app = angular.module('DashIt', ['js-data', 'ui.router'])
       else {
         return this.findAll().then(function(data){
           return angular.copy(data);
-        })
+        });
       }
     };
 

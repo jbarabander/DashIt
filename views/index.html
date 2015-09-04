@@ -14,7 +14,10 @@
     <script src="/js/controllers/login.controller.js"></script>
     <script src="/js/directives/login/login.js"></script>
     <script src='/js/controllers/signup.controller.js'></script>
-    <script src='/js/directives/register/register.js'></script>'
+    <script src='/js/directives/register/register.js'></script>
+    <script src='/js/states/login/login.state.js'></script>
+    <script src='/js/states/signup/signup.state.js'></script>
+    <script src='/js/states/main.js'></script>
   </head>
   <body>
     <div ng-app="DashIt">
@@ -28,10 +31,8 @@
                 <login creds='loginCreds' login="login(loginCreds)"></login>
               </div>
               <br/>
-              <p>Don't have an account? <a ui-sref='createAccount'>Create one here!</a></p>
-              <div ng-controller="SignupController">
-                <register new-user='newUser' signup='signUp(newUser)'></register>
-              </div>
+              <p>Don't have an account? <a ui-sref='signup'>Create one here!</a></p>
+              <ui-view></ui-view>
             </div>
           </div>
         </div>

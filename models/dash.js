@@ -3,6 +3,7 @@ var extend = require('mongoose-schema-extend');
 var Promise = require('bluebird');
 require('./');
 var Step = require('./step.js');
+var Blip = require('./blip.js')
 var limitText = require('../utilities/modelUtilities.js').limitText;
 
 console.log(Step.schema);
@@ -10,7 +11,7 @@ console.log(Step.schema);
 var dashSchema = mongoose.Schema(
   {
     title: {type: String, required: true},
-    description: {type: String, required: true},
+    description: {type: String},
     startDate: {type: Date, default: Date.now},
     endDate: {type: Date, min: Date.now}
   },
@@ -31,8 +32,8 @@ var discreteDashSchema = dashSchema.extend(
 var continuousDashSchema = dashSchema.extend(
   {
     source: {type: String},
-    current: {type: Number, required: true},
     target: {type: Number, required: true},
+    history: [Blip.schema]
   }
 );
 

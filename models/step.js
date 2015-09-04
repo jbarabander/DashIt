@@ -6,8 +6,11 @@ var limitText = require('../utilities/modelUtilities.js').limitText;
 var stepSchema = mongoose.Schema(
   {
     title: {type: String, required: true},
-    description: {type: String, required: true},
-    completed: {type: Boolean, required: true, default: false},
+    description: {type: String},
+    status: {
+      completed: {type: Boolean, required: true, default: false},
+      when: {type: Date, min: Date.now}
+    },
     date: {type: Date, required: true}
   }
 );

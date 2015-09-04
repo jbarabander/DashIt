@@ -16,8 +16,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 var indexHtmlPath = path.join(__dirname, '/views/index.html');
 
-app.get('/', function(req,res,next){
-  res.sendFile(indexHtmlPath);
+var validFrontEndRoutes = ['/', '/signup', '/login', '/users', '/dashes', '/dashes/:type', 'dashes/:type/:id', 'dashes/:type/:id/progress', 'dashes/discrete/:dashid/progress/:stepid', '/users/:id'];
+validFrontEndRoutes.forEach(function(stateRoute) {
+  app.get(stateRoute, function(req,res,next) {
+    res.sendFile(indexHtmlPath);
+  });
 });
 
 // uncomment after placing your favicon in /public

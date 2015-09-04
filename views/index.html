@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href='/'>
     <title></title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -12,6 +13,8 @@
     <script src="/js/factories/auth.factory.js"></script>
     <script src="/js/controllers/login.controller.js"></script>
     <script src="/js/directives/login/login.js"></script>
+    <script src='/js/controllers/signup.controller.js'></script>
+    <script src='/js/directives/register/register.js'></script>'
   </head>
   <body>
     <div ng-app="DashIt">
@@ -19,34 +22,15 @@
         <div ng-controller="LoginController" id="testCol" class="container">
           <h1 class="text-center">DashIt</h1>
           <p>A simple (and fun!) way to keep track of all the awesome things you accomplish!</p>
-          <div class="col-md-offset-2 text-left">
-            <h3>Login here</h3>
-          </div>
           <div class="row text-center">
             <div class="col-md-8 col-md-offset-2">
               <div ng-controller='LoginController'>
                 <login creds='loginCreds' login="login(loginCreds)"></login>
               </div>
               <br/>
-              <div>
-                <p>Don't have an account? <a ng-click="createAccount = !createAccount">Create one here!</a></p>
-                <div ng-show="!createAccount" class="container">
-                  <form name="createAccount">
-                    <div class="row text-center">
-                      <div class="col-lg-6 col-xs-12">
-                        <input type="text" name="firstName" ng-model="newUser.firstName" class="form-control"/>
-                      </div>
-                      <div class="col-lg-6 col-xs-12">
-                        <input type="text" name="lastName" ng-model="newUser.lastName" class="form-control"/>
-                      </div>
-                      <div class="col-lg-12">
-                        <input type="text" name="email" ng-model="newUser.email" class="form-control"/>
-                        <input type="text" name="username" ng-model="newUser.name" class="form-control"/>
-                        <input type="text" name="password" ng-model="newUser.password" class="form-control"/>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+              <p>Don't have an account? <a ui-sref='createAccount'>Create one here!</a></p>
+              <div ng-controller="SignupController">
+                <register new-user='newUser' signup='signUp(newUser)'></register>
               </div>
             </div>
           </div>

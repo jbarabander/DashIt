@@ -9,7 +9,7 @@ app.factory('Auth', function($http) {
       return response.data;
     });
   }
-  function logOut() {
+  function logout() {
     return $http.delete('auth/logout').then(function(response) {
       return response.data;
     })

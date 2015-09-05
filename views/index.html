@@ -2,10 +2,13 @@
 <html>
   <head>
     <base href='/'>
-    <title></title>
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <title>DashIt</title>
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/js-data/dist/js-data.js"></script>
     <script src="/bower_components/js-data-angular/dist/js-data-angular.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -15,43 +18,17 @@
     <script src="/js/directives/login/login.js"></script>
     <script src='/js/controllers/signup.controller.js'></script>
     <script src='/js/directives/register/register.js'></script>
+    <script src='/js/controllers/navbar.controller.js'></script>
+    <script src='/js/directives/navbar/navbar.js'></script>
     <script src='/js/states/login/login.state.js'></script>
     <script src='/js/states/signup/signup.state.js'></script>
-    <script src='/js/states/main.js'></script>
+    <script src='/js/states/home/home.state.js'></script>
   </head>
   <body>
-    <div ng-app="DashIt">
-      <header class="jumbotron text-center">
-        <div ng-controller="LoginController" id="testCol" class="container">
-          <h1 class="text-center">DashIt</h1>
-          <p>A simple (and fun!) way to keep track of all the awesome things you accomplish!</p>
-          <div class="row text-center">
-            <div class="col-md-8 col-md-offset-2">
-              <div ng-controller='LoginController'>
-                <login creds='loginCreds' login="login(loginCreds)"></login>
-              </div>
-              <br/>
-              <p>Don't have an account? <a ui-sref='signup'>Create one here!</a></p>
-              <ui-view></ui-view>
-            </div>
-          </div>
-        </div>
-      </header>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <h3><a>About</a></h3>
-            <p>find out more about this project!</p>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <h3><a>Connect</a></h3>
-            <p>Connect with others who are currently using DashIt!</p>
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <h3><a>Share</a></h3>
-            <p>Like this project?  Why not let some of yo franz know! (Please????  We'll like love you forever)</p>
-          </div>
-        </div>
+    <div class='presentation'>
+      <div ng-app="DashIt">
+        <navbar></navbar>
+        <ui-view></ui-view>
       </div>
     </div>
   </body>

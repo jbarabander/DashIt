@@ -3,6 +3,14 @@ app.factory('ContinuousDash', function(DS) {
     name: 'continuous',
     url: '/api/dashes/',
     idAttribute: '_id',
+    relations: {
+      hasMany: {
+        blips: {
+          localField: 'blips',
+          foreignKey: 'continuousDashId'
+        }
+      }
+    }
   });
   return ContinuousDash;
 }).run(function(ContinuousDash){});

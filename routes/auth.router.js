@@ -5,7 +5,10 @@ var User = require('../models/user.js');
 router.post('/login', function(req, res, next) {
   var username = req.body.username;
   var password = req.body.password;
-  var query = User.findOne({username: username}).select('+passwordHash');
+  var query = User.findOne({username: username})
+  .populate('discreteDashes')
+  .populate('continuousDashes')
+  .select('+passwordHash');
   query.exec(function(err, user) {
     if(err) return next(err);
     user.authenticate(password, function(err, result) {
@@ -30,8 +33,9 @@ router.post('/register', function(req, res, next) {
   });
 });
 
-router.post('/logout', function(req, res, next) {
-
+router.delete('/me', function(req, res, next) {
+  req.logout();
+  res.status(204).end();
 });
 
 router.get('/me', function(req, res, next) {

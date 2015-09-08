@@ -94,3 +94,9 @@ var app = angular.module('DashIt', ['js-data', 'ui.router'])
     };
     // End Mongoose Relation fix
   });
+
+  app.run(function(Auth, $rootScope) {
+    Auth.refreshMe().then(function(element) {
+      console.log('at refresh ', $rootScope.me);
+    });
+  })

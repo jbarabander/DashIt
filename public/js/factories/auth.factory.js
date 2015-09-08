@@ -1,5 +1,4 @@
-app.factory('Auth', function($http, $rootScope, User) {
-  $rootScope.me = {};//FIXME
+app.factory('Auth', function($http, $rootScope) {
 
   function login(loginObj) {
     return $http.post('auth/login', loginObj).then(function(response) {
@@ -12,21 +11,23 @@ app.factory('Auth', function($http, $rootScope, User) {
     });
   }
   function logout() {
-    return $http.delete('auth/logout').then(function(response) {
-      return response.data;
+    return $http.delete('auth/me').then(function(response) {
+      delete $rootScope.me;
     });
   }
 
   function refreshMe() {
     return $http.get('auth/me').then(function(response) {
-      User.find()
+      console.log(response);
+      $rootScope.me = response.data;
     });
   }
 
   return {
     login: login,
     createUser: createUser,
-    logout: logout
+    logout: logout,
+    refreshMe: refreshMe
   };
 });
 //FIXME

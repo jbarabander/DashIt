@@ -3,12 +3,13 @@ app.controller('SignupController', function($scope, Auth, $state) {
     firstName: null,
     lastName: null,
     username: null,
-    password: null,
+    passwordHash: null,
     email: null,
   };
   $scope.signUp = function(newUserObj) {
     Auth.createUser(newUserObj).then(function(user) {
-      $state.go('user', {id: user._id});
+      $state.go('home');
+      // $state.go('user', {id: user._id});
     });
   };
 });

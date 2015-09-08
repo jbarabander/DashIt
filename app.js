@@ -1,14 +1,17 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 var sass = require('node-sass-middleware');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var db = require('./models/index.js');
 
 var app = express();
+
+app.use(require('./routes/logging.middleware.js'));
+app.use(require('./routes/requestState.middleware.js'));
+app.use(require('./routes/sass.middleware.js'));
+app.use('/auth', require('./routes/auth.router.js'));
 
 // view engine setup
 
@@ -25,21 +28,6 @@ validFrontEndRoutes.forEach(function(stateRoute) {
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-app.use(
-  sass(
-    {
-      src: path.join(__dirname, '/assets'),
-      dest: path.join(__dirname, '/public'),
-      debug: true,
-      outputStyle: 'compressed'
-    }
-  )
-);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));

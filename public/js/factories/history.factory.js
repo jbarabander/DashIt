@@ -4,7 +4,7 @@ app.factory('Blip', function(DS) {
     idAttribute: '_id',
     relations: {
       belongsTo: {
-        discrete: {
+        continuous: {
           localField: 'history',
           localKey: 'continuousDashId'
         }

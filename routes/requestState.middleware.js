@@ -20,7 +20,7 @@ passport.serializeUser(function(user, done) {
   done(null, user._id);
 });
 passport.deserializeUser(function(id, done) {
-  User.findById(id, done);
+  User.findById(id, done).populate('');
 });
 
 router.use(passport.initialize());

@@ -93,4 +93,4 @@ var app = angular.module('DashIt', ['js-data', 'ui.router'])
       return instance;
     };
     // End Mongoose Relation fix
-  })
+  });

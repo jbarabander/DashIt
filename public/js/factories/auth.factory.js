@@ -1,4 +1,6 @@
-app.factory('Auth', function($http) {
+app.factory('Auth', function($http, $rootScope, User) {
+  $rootScope.me = {};//FIXME
+
   function login(loginObj) {
     return $http.post('auth/login', loginObj).then(function(response) {
       return response.data;
@@ -12,7 +14,13 @@ app.factory('Auth', function($http) {
   function logout() {
     return $http.delete('auth/logout').then(function(response) {
       return response.data;
-    })
+    });
+  }
+
+  function refreshMe() {
+    return $http.get('auth/me').then(function(response) {
+      User.find()
+    });
   }
 
   return {

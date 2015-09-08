@@ -18,9 +18,9 @@ var dashSchema = mongoose.Schema(
   {collection: 'dashes', discriminatorKey: '_type'}
 );
 
-dashSchema.path('title').validate(function(value) {
-
-});
+// dashSchema.path('title').validate(function(value) {
+//
+// });
 
 
 var discreteDashSchema = dashSchema.extend(

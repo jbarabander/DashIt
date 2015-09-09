@@ -6,7 +6,6 @@ var Step = require('./step.js');
 var Blip = require('./blip.js')
 var limitText = require('../utilities/modelUtilities.js').limitText;
 
-// console.log(Step.schema);
 
 var dashSchema = mongoose.Schema(
   {

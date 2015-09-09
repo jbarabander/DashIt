@@ -97,6 +97,6 @@ var app = angular.module('DashIt', ['js-data', 'ui.router'])
 
   app.run(function(Auth, $rootScope) {
     Auth.refreshMe().then(function(element) {
-      console.log('at refresh ', $rootScope.me);
+      console.log('in the refresh ', $rootScope.isLoggedIn());
     });
-  })
+  });

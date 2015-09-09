@@ -8,3 +8,27 @@
 html{
   min-height: 100%;
 }
+
+// @font-face {
+//   font-family: 'moon-light';
+//   font-style: normal;
+//   font-weight: normal;
+//   src: url('../fonts/Moon_Light.ttf');
+// }
+
+// body {
+//   font-family: 'moon-light';
+// }
+
+@font-face {
+  font-family: 'choplin-el';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Choplin-ExtraLight-DEMO.otf');
+}
+
+
+
+body {
+  font-family: 'choplin-el';
+}

@@ -16,7 +16,8 @@ var userSchema = mongoose.Schema(
     pictureUrl: String,
     email: {type: String, required: true, unique: true},
     discreteDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'DiscreteDash'}],
-    continuousDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'ContinuousDash'}]
+    continuousDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'ContinuousDash'}],
+    isAdmin: {type: Boolean, default: false}
   }
 );
 

@@ -3,7 +3,7 @@ app.controller('LoginController', function($scope, Auth, $state) {
   $scope.login = function(loginObj) {
     Auth.login(loginObj).then(function(element) {
       $state.go('home');
-      // $state.go('user', {id: element._id});
+      // $state.go('profile', {id: element._id});
     });
   };
 });

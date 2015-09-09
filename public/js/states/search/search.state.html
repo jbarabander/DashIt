@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <li ng-repeat='user in users'>
+      <div>
+        <a ui-sref='profile({id: user._id})'>
+        <p>{{user.firstName}} {{user.lastName}}</p>
+      </div>
+  </li>
+  </ul>
+</div>

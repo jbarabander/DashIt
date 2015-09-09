@@ -1,15 +1,20 @@
 app.config(function($stateProvider) {
   $stateProvider
-  .state('user', {
-    url: '/users/search/:searchQuery',
+  .state('searchResults', {
+    url: '/users/search/?username',
     templateUrl: '/js/states/search/search.state.html',
     controller: 'SearchController',
     resolve: {
-      users: function(User, $stateParams) {
-        return User.findAll($stateParams.searchQuery)
+      users: function(User, $http, $stateParams) {
+        return User.findAll({username: $stateParams.username})
         .then(function(users) {
+          console.log(users);
           return users;
-        }); //FIXME
+        });
+        // return $http.get('api/users', {params: {username: $stateParams.username}})
+        // .then(function(users) {
+        //   return users.data;
+        // })
       }
     }
   });

@@ -1,7 +1,7 @@
 app.factory('ContinuousDash', function(DS) {
   var ContinuousDash = DS.defineResource({
     name: 'continuous',
-    url: '/api/dashes/',
+    basePath: '/dashes/',
     idAttribute: '_id',
     relations: {
       hasMany: {

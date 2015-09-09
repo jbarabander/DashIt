@@ -4,7 +4,7 @@ app.factory('User', function(DS) {
     idAttribute: '_id',
     relations: {
       hasMany: {
-        discrete:   {
+        discrete: {
           localField: 'discreteDashes',
           foreignKey: 'userId'
         },

@@ -13,7 +13,8 @@ var userSchema = mongoose.Schema(
     lastName: {type: String, required: true},
     username: {type: String, required: true, unique: true},
     passwordHash: {type: String, required: true, select: false},
-    pictureUrl: String,
+    pictureUrl: {type: String, default: "../images/default-img.png"},
+    headerPictureUrl: {type: String, default: "../images/20150505_083625.jpg"},
     email: {type: String, required: true, unique: true},
     discreteDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'DiscreteDash'}],
     continuousDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'ContinuousDash'}],
@@ -23,7 +24,8 @@ var userSchema = mongoose.Schema(
 
 userSchema.methods.hash = function(pass, cb) {
   var self = this;
-  return bcrypt.genSalt(16, function(err, salt) {
+  return bcrypt.genSalt(12, function(err, salt) {
+    if(err) return cb(err);
     bcrypt.hash(pass, salt, function(err, hash) {
       if(err) return cb(err);
       self.passwordHash = hash;

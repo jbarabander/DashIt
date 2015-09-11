@@ -2,8 +2,9 @@
   <ul>
     <li ng-repeat='user in users'>
       <div>
-        <a ui-sref='profile({id: user._id})'>go to profile</a>
+        <h3><a ui-sref='profile({id: user._id})'>{{user.username}}</a></h3>
         <p>{{user.firstName}} {{user.lastName}}</p>
+        <p>{{user.email}}</p>
       </div>
     </li>
   </ul>

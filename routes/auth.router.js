@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user.js');
-
+//req.authenticate;
 router.post('/login', function(req, res, next) {
   var username = req.body.username;
   var password = req.body.password;
   var query = User.findOne({username: username})
-  .populate('discreteDashes')
-  .populate('continuousDashes')
+  .populate('discreteDashes continuousDashes')
   .select('+passwordHash');
   query.exec(function(err, user) {
     if(err) return next(err);
@@ -18,7 +17,7 @@ router.post('/login', function(req, res, next) {
         res.json(user);
       });
       var error = new Error('authentication failed');
-      error.status = 403;
+      error.status = 401;
       next(error);
     });
   });

@@ -1,4 +1,4 @@
-app.controller('NavBarController', function($scope, $state, $location, Auth) {
+app.controller('NavBarController', function($scope, $state, $location, $rootScope, Auth) {
   $scope.pathStartsWith = function(state) {
     var partial = $state.href(state);
     var path = $location.path();
@@ -9,8 +9,8 @@ app.controller('NavBarController', function($scope, $state, $location, Auth) {
       $state.go('home');
     });
   };
-  $scope.userSearch = function(searchString) {
-    console.log(searchString);
-    $state.go('searchResults', {username: searchString});
-  }
+  // $scope.userSearch = function(searchString) {
+  //   //console.log(searchString);
+  //   $state.go('searchResults', {username: searchString});
+  // };
 });

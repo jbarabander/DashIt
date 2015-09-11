@@ -1,5 +1,6 @@
 app.factory('Auth', function($http, $rootScope) {
   var me;
+  //copy of me currentUserFactory
   $rootScope.isLoggedIn = function () {
 		return !!me._id;
 	};

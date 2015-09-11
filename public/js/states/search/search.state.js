@@ -8,7 +8,6 @@ app.config(function($stateProvider) {
       users: function(User, $http, $stateParams) {
         return User.findAll({username: $stateParams.username})
         .then(function(users) {
-          console.log(users);
           return users;
         });
         // return $http.get('api/users', {params: {username: $stateParams.username}})

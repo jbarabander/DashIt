@@ -32,13 +32,13 @@
       </ul>
       <ul class='nav navbar-nav navbar-left'>
         <li ng-show='$root.isLoggedIn()'>
-          <a ui-sref='user({id:$root.getId()})' class='nav navbar-left'>{{$root.getFirstName()}}</a>
+          <a ui-sref='profile({id:$root.getId()})' class='nav navbar-left'>{{$root.getFirstName()}}</a>
         </li>
         <li>
           <div class='search-bar-container'>
-            <form name='searchForm' ng-submit='userSearch(username)'>
-              <input name='username' ng-model='username' placeholder='username'></input>
-              <button type=submit>search</button>
+            <form name='searchForm' class='form-inline'>
+              <input name='username' ng-model='username' placeholder='username' class='form-control'></input>
+              <a ui-sref='searchResults({username: username})'><button class='btn btn-default'>search</button></a>
             </form>
           </div>
         </li>

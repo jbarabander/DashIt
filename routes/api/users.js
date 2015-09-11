@@ -11,4 +11,11 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/:id', function(req, res, next) {
+  User.findById(req.params.id)
+      .then(function(element) {
+        res.json(element);
+      })
+})
+
 module.exports = router;

@@ -14,7 +14,7 @@ var userSchema = mongoose.Schema(
     username: {type: String, required: true, unique: true},
     passwordHash: {type: String, required: true, select: false},
     pictureUrl: {type: String, default: "../images/default-img.png"},
-    headerPictureUrl: {type: String, default: "../images/20150505_083625.jpg"},
+    headerPictureUrl: {type: String, default: "../images/20150505_083625_resized.jpg"},
     email: {type: String, required: true, unique: true},
     discreteDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'DiscreteDash'}],
     continuousDashes: [{type: mongoose.Schema.Types.ObjectId, ref: 'ContinuousDash'}],

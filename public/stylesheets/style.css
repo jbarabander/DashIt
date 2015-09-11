@@ -1,26 +1,21 @@
 .header-container {
-  height: 300px;
+  height: 440px;
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: top;
+  background-size: cover;
+  background-position: center center;
   background-attachment: fixed;
   position: relative;
 }
 
 .content-container {
   position: absolute;
-  top: 220px;
+  top: 360px;
   left: 0px;
   height: 100%;
   width: 100%;
   z-index: 10;
 }
 
-@media (max-width: 640px) {
-  .header-container {
-    background-size: 640px;
-  }
-}
 .front-card {
   background: linear-gradient(to right bottom, #1de9b6, #9575cd);
 }
@@ -54,5 +49,5 @@ body {
 }
 
 .search-bar-container {
-  padding-top: 8px;
+  padding-top: 10px;
 }

@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var sass = require('node-sass-middleware');
 var routes = require('./routes/index');
 var api = require('./routes/api/api.router');
 var db = require('./models/index.js');

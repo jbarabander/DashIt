@@ -10,7 +10,7 @@ var app = express();
 
 app.use(require('./routes/logging.middleware.js'));
 app.use(require('./routes/requestState.middleware.js'));
-app.use(require('./routes/sass.middleware.js'));
+// app.use(require('./routes/sass.middleware.js'));
 app.use('/auth', require('./routes/auth.router.js'));
 
 // view engine setup

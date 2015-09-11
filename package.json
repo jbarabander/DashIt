@@ -21,7 +21,6 @@
     "mongoose-schema-extend": "^0.1.7",
     "morgan": "~1.6.1",
     "node-mongo-seeds": "^2.2.7",
-    "node-sass-middleware": "^0.9.0",
     "passport": "^0.3.0",
     "q": "^1.4.1",
     "serve-favicon": "~2.3.0",

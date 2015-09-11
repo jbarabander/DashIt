@@ -350,20 +350,20 @@ app.directive('responsiveBg', function(Auth){
 
 app.config(function($stateProvider) {
   $stateProvider
+  .state('home', {
+    url: '/',
+    templateUrl: 'assets/js/states/home/home.state.html',
+  });
+});
+
+app.config(function($stateProvider) {
+  $stateProvider
   .state('login', {
     url: '/login',
     templateUrl: 'assets/js/states/login/login.state.html',
     controller: 'LoginController'
   })
 })
-
-app.config(function($stateProvider) {
-  $stateProvider
-  .state('home', {
-    url: '/',
-    templateUrl: 'assets/js/states/home/home.state.html',
-  });
-});
 
 app.config(function($stateProvider) {
   $stateProvider

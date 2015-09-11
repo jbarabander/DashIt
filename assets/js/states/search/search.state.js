@@ -2,7 +2,7 @@ app.config(function($stateProvider) {
   $stateProvider
   .state('searchResults', {
     url: '/users/search/?username',
-    templateUrl: '/js/states/search/search.state.html',
+    templateUrl: 'assets/js/states/search/search.state.html',
     controller: 'SearchController',
     resolve: {
       users: function(User, $http, $stateParams) {

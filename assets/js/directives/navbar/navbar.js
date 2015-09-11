@@ -1,7 +1,7 @@
 app.directive('navbar', function() {
   return {
     restrict: 'E',
-    templateUrl: '/js/directives/navbar/navbar.html',
+    templateUrl: 'assets/js/directives/navbar/navbar.html',
     controller: 'NavBarController',
   };
 });

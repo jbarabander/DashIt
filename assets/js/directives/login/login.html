@@ -1,0 +1,12 @@
+<div>
+  <div class='text-left'>
+    <h3>Login here</h3>
+  </div>
+  <form name="loginForm" ng-submit="loginForm.$valid && login()">
+    <input type="text" name="username" placeholder="username" ng-model="creds.username" class="form-control" required/>
+    <input type="password" name="password" placeholder="password" ng-model="creds.password" class="form-control" required/><br/>
+    <div class="text-left">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </form>
+</div>

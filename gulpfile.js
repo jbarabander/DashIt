@@ -13,6 +13,8 @@ var gulp = require('gulp'),
     del = require('del'),
     sourcemaps = require('gulp-sourcemaps');
 
+livereload({start: true});
+
 gulp.task('clean', function(cb) {
   del(['./public/js', './public/images', './public/stylesheets'], cb);
 });

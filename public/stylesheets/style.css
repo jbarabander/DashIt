@@ -51,3 +51,7 @@ body {
 .search-bar-container {
   padding-top: 10px;
 }
+
+.dash-titles {
+  display: inline;
+}

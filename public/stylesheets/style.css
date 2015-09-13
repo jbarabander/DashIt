@@ -44,6 +44,15 @@ html {
   font-weight: normal;
   src: url("../fonts/Choplin-ExtraLight-DEMO.otf");
 }
+.justin {
+  max-width: 25%;
+}
+
+.custom-search {
+  height: 50px;
+  border-radius: 2px;
+}
+
 body {
   font-family: 'choplin-el';
 }
